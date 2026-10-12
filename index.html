@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AquaAlert - Water Leakage Reporting</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0faff;
+  color: #17384a;
+  line-height: 1.6;
+}
+
+header {
+  background: #087eaf;
+  color: white;
+  padding: 18px;
+  text-align: center;
+}
+
+header h2 {
+  margin: 0;
+}
+
+nav {
+  background: #075a80;
+  padding: 12px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  padding: 45px 20px;
+  background: #dff6ff;
+}
+
+.hero h1 {
+  color: #075a80;
+  font-size: 32px;
+}
+
+.hero p {
+  font-size: 17px;
+}
+
+button {
+  background: #087eaf;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+section {
+  max-width: 850px;
+  margin: auto;
+  padding: 25px 18px;
+}
+
+h2 {
+  color: #075a80;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  margin: 14px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #00000012;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #b7d1df;
+  border-radius: 7px;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 90px;
+}
+
+#message {
+  color: #087e50;
+  font-weight: bold;
+}
+
+.report {
+  background: #e4f8ee;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  background: #075a80;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>💧 AquaAlert</h2>
+  <p>Every Drop Counts!</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#report">Report a Leak</a>
+  <a href="#tips">Water Saving Tips</a>
+</nav>
+
+<div class="hero">
+  <h1>Spot a Leak. Report It. Save Water.</h1>
+  <p>
+    AquaAlert is a website that promotes water conservation
+    and helps people record suspected water leakage problems.
+  </p>
+  <a href="#report">
+    <button type="button">Report a Leak</button>
+  </a>
+</div>
+
+<section id="about">
+  <h2>About AquaAlert</h2>
+  <div class="card">
+    <p>
+      Water is one of our most valuable natural resources.
+      Unnoticed leaking taps, damaged pipes and overflowing
+      tanks can waste a large amount of water.
+    </p>
+    <p>
+      AquaAlert provides a digital form for recording
+      suspected leaks, including their location, type and
+      urgency. It also promotes responsible water usage.
+    </p>
+  </div>
+</section>
+
+<section id="report">
+  <h2>Report a Water Leak</h2>
+
+  <div class="card">
+    <form id="leakForm">
+
+      <label for="location">Location or Landmark *</label>
+      <input id="location" type="text"
+        placeholder="Enter the leak location" required>
+
+      <label for="type">Type of Leakage *</label>
+      <select id="type" required>
+        <option value="">Select an issue</option>
+        <option>Leaking Tap or Pipe</option>
+        <option>Overflowing Water Tank</option>
+        <option>Roadside Water Leakage</option>
+        <option>Water Pooling</option>
+        <option>Other</option>
+      </select>
+
+      <label for="urgency">Urgency</label>
+      <select id="urgency">
+        <option>Normal</option>
+        <option>Urgent - Heavy Water Flow</option>
+      </select>
+
+      <label for="details">Additional Details</label>
+      <textarea id="details"
+        placeholder="Describe the problem"></textarea>
+
+      <br><br>
+      <button type="submit">Submit Demo Report</button>
+    </form>
+
+    <p id="message" role="status"></p>
+  </div>
+
+  <h2>Submitted Demo Reports</h2>
+
+  <div id="reports">
+    <p>No reports submitted yet.</p>
+  </div>
+</section>
+
+<section id="tips">
+  <h2>Water Saving Tips</h2>
+
+  <div class="card">
+    <h3>🚰 Check Your Taps</h3>
+    <p>Turn taps off properly and report dripping fixtures.</p>
+  </div>
+
+  <div class="card">
+    <h3>💧 Prevent Tank Overflow</h3>
+    <p>Monitor water tanks and avoid unnecessary overflow.</p>
+  </div>
+
+  <div class="card">
+    <h3>🌱 Spread Awareness</h3>
+    <p>Encourage friends and neighbours to save water.</p>
+  </div>
+</section>
+
+<footer>
+  <p>AquaAlert - Water Leakage Reporting Website</p>
+  <p>CODESTROAM 2026 | Web Development Track</p>
+  <small>
+    Student prototype. Reports are displayed only on this
+    page and are not sent to water authorities.
+  </small>
+</footer>
+
+<script>
+const form = document.getElementById("leakForm");
+const reports = document.getElementById("reports");
+const message = document.getElementById("message");
+
+let reportCount = 0;
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const location =
+    document.getElementById("location").value.trim();
+
+  const type =
+    document.getElementById("type").value;
+
+  const urgency =
+    document.getElementById("urgency").value;
+
+  const details =
+    document.getElementById("details").value.trim();
+
+  if (!location || !type) {
+    message.textContent =
+      "Please fill in all required fields.";
+    return;
+  }
+
+  reportCount++;
+
+  if (reportCount === 1) {
+    reports.innerHTML = "";
+  }
+
+  const report = document.createElement("div");
+  report.className = "report";
+
+  const heading = document.createElement("h3");
+  heading.textContent = "Report #" + reportCount;
+
+  const locationText = document.createElement("p");
+  locationText.textContent = "Location: " + location;
+
+  const typeText = document.createElement("p");
+  typeText.textContent = "Issue: " + type;
+
+  const urgencyText = document.createElement("p");
+  urgencyText.textContent = "Urgency: " + urgency;
+
+  const detailsText = document.createElement("p");
+  detailsText.textContent =
+    details || "No additional details provided.";
+
+  report.appendChild(heading);
+  report.appendChild(locationText);
+  report.appendChild(typeText);
+  report.appendChild(urgencyText);
+  report.appendChild(detailsText);
+
+  reports.prepend(report);
+
+  message.textContent =
+    "Demo report submitted successfully!";
+
+  form.reset();
+});
+</script>
+
+</body>
+</html>
+
+
